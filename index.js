@@ -2,6 +2,7 @@
 
 const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input");
+const errorMessage = document.getElementById("error-message");
 const profileContainer = document.getElementById("profile-container");
 const themeToggleBtn = document.getElementById("theme-toggle-btn");
 
