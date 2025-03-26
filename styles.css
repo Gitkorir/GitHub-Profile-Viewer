@@ -34,7 +34,7 @@ button {
 }
 
 button:disabled {
-  background-color: grey;
+  background-color: lightskyblue;
 }
 
 header h1 {
@@ -48,7 +48,8 @@ header h1 {
 
 #profile-container img {
   border-radius: 50%;
-  width: 150px;
+  width: 300px;
+  height: 300x;
 }
 
 .dark-mode {
