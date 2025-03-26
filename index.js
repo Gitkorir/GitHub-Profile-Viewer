@@ -21,6 +21,12 @@ async function fetchProfileData(username) {
     profileContainer.innerHTML = "";
   }
 }
+        displayProfileData(data);
+    } catch (error) {
+        errorMessage.textContent = error.message;
+        profileContainer.innerHTML = '';
+    }
+}
 
 // Toggle Dark Mode
 themeToggleBtn.addEventListener("click", () => {
