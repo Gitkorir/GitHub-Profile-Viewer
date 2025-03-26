@@ -1,0 +1,56 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+body {
+  background-color: antiquewhite;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+#img1 {
+  width: auto;
+  height: auto;
+}
+#app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#search-container {
+  margin-bottom: 20px;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 5px;
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+header h1 {
+  text-align: center;
+}
+
+#profile-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#profile-container img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: white;
+}
