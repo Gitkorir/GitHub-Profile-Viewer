@@ -21,11 +21,18 @@ async function fetchProfileData(username) {
     profileContainer.innerHTML = "";
   }
 }
-        displayProfileData(data);
-    } catch (error) {
-        errorMessage.textContent = error.message;
-        profileContainer.innerHTML = '';
-    }
+// Display Profile Data
+function displayProfileData(data) {
+  profileContainer.innerHTML = `
+        <img src="${data.avatar_url}" alt="Avatar">
+        <h2>${data.name}</h2>
+        <p>${data.bio || "No bio available"}</p>
+        <p>Location: ${data.location || "Not specified"}</p>
+        <h3>Public Repositories:</h3>
+        <ul>
+            ${data.public_repos}
+        </ul>
+    `;
 }
 
 // Toggle Dark Mode
