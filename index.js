@@ -35,6 +35,11 @@ function displayProfileData(data) {
         </ul>
     `;
 }
+// Event Listeners
+searchBtn.addEventListener("click", () => fetchProfileData(searchInput.value));
+searchInput.addEventListener("keyup", () => {
+  searchBtn.disabled = !searchInput.value.trim();
+});
 
 // Toggle Dark Mode
 themeToggleBtn.addEventListener("click", () => {
