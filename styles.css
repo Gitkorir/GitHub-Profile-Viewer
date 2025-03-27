@@ -12,10 +12,7 @@ body {
   display: flex;
   align-items: center;
 }
-#img1 {
-  width: auto;
-  height: auto;
-}
+
 #app-container {
   max-width: 900px;
   margin: 0 auto;
