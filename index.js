@@ -10,18 +10,17 @@ const themeToggleBtn = document.getElementById("theme-toggle-btn");
 async function fetchProfileData(username) {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
-
-    if (data.message === "Not Found") {
-      throw new Error("User not found");
+    if (!response.ok) {
+      throw new Error("User not found or API rate limit exceeded");
     }
-
+    const data = await response.json();
     displayProfileData(data);
   } catch (error) {
     errorMessage.textContent = error.message;
     profileContainer.innerHTML = "";
   }
 }
+
 // Display Profile Data
 function displayProfileData(data) {
   profileContainer.innerHTML = `
