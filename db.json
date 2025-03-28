@@ -1,1 +1,22 @@
-{}
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "octocat",
+      "name": "The Octocat",
+      "bio": "GitHub mascot",
+      "location": "San Francisco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/583231?v=4",
+      "public_repos": 8
+    },
+    {
+      "id": 2,
+      "username": "defunkt",
+      "name": "Chris Wanstrath",
+      "bio": "Co-founder of GitHub",
+      "location": "San Francisco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
+      "public_repos": 10
+    }
+  ]
+}
