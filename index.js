@@ -19,6 +19,9 @@ async function fetchProfileData(username) {
     errorMessage.textContent = error.message;
     profileContainer.innerHTML = "";
   }
+  if (response.status === 403) {
+    alert("GitHub API rate limit exceeded. Please try again later.");
+  }
 }
 
 // Display Profile Data
