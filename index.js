@@ -11,16 +11,18 @@ async function fetchProfileData(username) {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`);
     if (!response.ok) {
-      throw new Error("User not found or API rate limit exceeded");
+      if (response.status === 403) {
+        throw new Error("User not found or API rate limit exceeded");
+      } else if (response.status === 404) {
+        throw new Error("User not found");
+      }
     }
     const data = await response.json();
     displayProfileData(data);
+    fetchRepositories(username);
   } catch (error) {
     errorMessage.textContent = error.message;
     profileContainer.innerHTML = "";
-  }
-  if (response.status === 403) {
-    alert("GitHub API rate limit exceeded. Please try again later.");
   }
 }
 
@@ -36,6 +38,38 @@ function displayProfileData(data) {
             ${data.public_repos}
         </ul>
     `;
+}
+//fetching Repositories
+async function fetchRepositories(username) {
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/${username}/repos`
+    );
+    //handle an ApI response
+    if (!response.ok) {
+      throw new Error("could not fetch repositories.");
+    }
+    const repos = await response.json();
+    dispalyRepositories(repos);
+  } catch (error) {
+    console, log("Error fetching repositories:");
+  }
+}
+// Display Repositories
+function displayRepositories(repos) {
+  let repoList = "";
+  repos.forEach((repo) => {
+    repoList += `<li>${repo.name} - ${
+      repo.description || "No description"
+    }</li>`;
+  });
+
+  const repoSection = `
+    <h3>Repositories:</h3>
+    <ul>${repoList}</ul>
+  `;
+
+  profileContainer.innerHTML += repoSection;
 }
 // Event Listeners
 searchBtn.addEventListener("click", () => fetchProfileData(searchInput.value));
