@@ -7,7 +7,7 @@
 
 /* General body styles */
 body {
-  background-color: #f0f0f0; /* Light background color */
+  background-color: bisque;
   background-image: url("https://www.example.com/your-background-image.jpg"); /* Replace with your image URL */
   background-size: cover;
   background-position: center center;
